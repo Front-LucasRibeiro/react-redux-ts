@@ -7,14 +7,14 @@ const CharacterList = () => {
   if (error) return <div>Erro: {error}</div>;
 
   return (
-    <div>
-      <h1>Personagens de Rick and Morty</h1>
-      <ul>
+    <div className="bg-gray-900 text-white px-4">
+      <h1 className="flex justify-center pt-4 text-2xl">Personagens de Rick and Morty</h1>
+      <ul className="flex flex-wrap gap-4 justify-center py-8">
         {characters?.map((character) => (
-          <li key={character.id}>
+          <li key={character.id} className="mb-4">
+            <img src={character.image} alt={character.name} />
             <h3>{character.name}</h3>
             <p>{character.species}</p>
-            <img src={character.image} alt={character.name} />
           </li>
         ))}
       </ul>
